@@ -1,9 +1,9 @@
-package api_clima.atividade_01;
+package api_clima.atividade_01.PrjClimaAPI.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "api_clima.atividade_01")
 public class Atividade01Application {
 
 	public static void main(String[] args) {
