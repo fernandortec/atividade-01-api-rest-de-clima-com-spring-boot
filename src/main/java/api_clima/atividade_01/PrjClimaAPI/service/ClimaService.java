@@ -14,16 +14,12 @@ public class ClimaService {
     @Value("${tomorrowio.api.url}")
     private String apiUrl;
 
-    @Value("${tomorrowio.api.city}")
-    private String location;
-
     @Value("${tomorrowio.api.timesteps}")
     private String timesteps;
 
-    public String preverTempo() {
+    public String preverTempo(String location) {
 
-        String location = "?location=curitiba";
-        String urlFinal = apiUrl + location + "&timesteps=" + timesteps + "&apikey=" + token;
+        String urlFinal = apiUrl + "?location=" +location + "&timesteps=" + timesteps + "&apikey=" + token;
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(urlFinal, String.class);
